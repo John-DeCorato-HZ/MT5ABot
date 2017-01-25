@@ -13,6 +13,11 @@ class Admin:
 
     def __init__(self, bot):
         self.bot = bot
+        
+    @commands.command(hidden=True)
+    @checks.is_owner()
+    async def hidden_test():
+        await self.bot.say("Hey this worked")
 
     @commands.command(hidden=True)
     @checks.is_owner()
